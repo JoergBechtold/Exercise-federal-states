@@ -96,3 +96,18 @@ let bundeslaender = [
     comments: [],
   },
 ];
+
+/* Render all federal states  */
+function render() {
+  let federalStatesContent = document.getElementById('federal-states-content');
+  federalStatesContent.innerHTML = '';
+
+  for (let i = 0; i < federalStatesContent.length; i++) {
+    const land = federalStatesContent[i];
+    land.innerHTML += /*HTML*/ `
+    <div class="card"></div>
+    
+    
+    `;
+  }
+}
