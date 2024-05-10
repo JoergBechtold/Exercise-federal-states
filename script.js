@@ -1,4 +1,4 @@
-let federalStates = [
+let bundeslaender = [
   {
     name: 'Baden-Württemberg',
     population: 11.1,
@@ -97,17 +97,26 @@ let federalStates = [
   },
 ];
 
-/* Render all federal states  */
 function render() {
-  let federalStatesContent = document.getElementById('federal-states-content');
-  federalStatesContent.innerHTML = '';
+  let content = document.getElementById('content');
+  content.innerHTML = '';
 
-  for (let i = 0; i < federalStates.length; i++) {
-    const land = federalStates[i];
-    federalStatesContent.innerHTML += /*HTML*/ `
-    <div class="card"></div>
-    <h1>${land['name']}</h1>
-    
-    `;
+  for (let i = 0; i < bundeslaender.length; i++) {
+    const land = bundeslaender[i];
+    content.innerHTML += /*HTML*/ `
+          <div class="card">
+              <h2>${land['name']}</h2>
+
+              <div id="landcontent${i}"></div>
+              <input id="input${i}"><button onclick="addComment(${i})">OK</button>
+          </div>
+      `;
+
+    let landcontent = document.getElementById(`landcontent${i}`);
+
+    for (let j = 0; j < land['comments'].length; j++) {
+      const comment = land['comments'][j];
+      landcontent.innerHTML += /*HTML*/ `<div>${comment}</div>`;
+    }
   }
 }
