@@ -1,4 +1,4 @@
-let bundeslaender = [
+let federalStates = [
   {
     name: 'Baden-Württemberg',
     population: 11.1,
@@ -102,11 +102,11 @@ function render() {
   let federalStatesContent = document.getElementById('federal-states-content');
   federalStatesContent.innerHTML = '';
 
-  for (let i = 0; i < federalStatesContent.length; i++) {
-    const land = federalStatesContent[i];
-    land.innerHTML += /*HTML*/ `
+  for (let i = 0; i < federalStates.length; i++) {
+    const land = federalStates[i];
+    federalStatesContent.innerHTML += /*HTML*/ `
     <div class="card"></div>
-    
+    <h1>${land['name']}</h1>
     
     `;
   }
