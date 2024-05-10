@@ -97,6 +97,7 @@ let bundeslaender = [
   },
 ];
 
+/* Render all bundesaender */
 function render() {
   let content = document.getElementById('content');
   content.innerHTML = '';
@@ -119,4 +120,12 @@ function render() {
       landcontent.innerHTML += /*HTML*/ `<div>${comment}</div>`;
     }
   }
+}
+
+/* Add comment */
+function addComment(index) {
+  let input = document.getElementById(`input${index}`);
+  bundeslaender[index]['comments'].push(input.value);
+
+  render();
 }
