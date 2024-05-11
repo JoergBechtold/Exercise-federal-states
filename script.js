@@ -107,6 +107,8 @@ function render() {
     content.innerHTML += /*HTML*/ `
           <div class="card">
               <h2>${land['name']}</h2>
+              <p>Population:${land['population']} Millionen</p>
+              <a target=”_blank” href="${land['url']}">${land['url']}</a>
 
               <div id="landcontent${i}"></div>
               <input id="input${i}"><button onclick="addComment(${i})">OK</button>
